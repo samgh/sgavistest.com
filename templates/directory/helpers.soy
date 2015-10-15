@@ -118,9 +118,9 @@
     <ul>
       {foreach $k in $keys}
         <li class="location location-{index($k)}">
+                    {$k}
           <a href="{$base.url}{$k.url}">
             {let $l : $k.loc /}
-            {$l.videos}
             <div class="location-status">
               <div class="open-label" style="display:none">OPEN</div>
               <div class="closed-label" style="display:none">CLOSED</div>
