@@ -118,7 +118,7 @@
     <ul>
       {foreach $k in $keys}
         <li class="location location-{index($k)}">
-                    {$k}
+                    {$k.loc.gallery}
           <a href="{$base.url}{$k.url}">
             {let $l : $k.loc /}
             <div class="location-status">
