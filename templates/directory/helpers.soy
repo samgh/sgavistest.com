@@ -55,7 +55,7 @@
     {/if}
     <span>
       {if $showNumLocs}
-        {} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
+        {2 /*locationCount */} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
       {else}
         All Locations
       {/if}
