@@ -6,7 +6,7 @@
  */
 {template .mobileHeader}
   {call helpers.header data="all"}
-    {param base: $base.url /}
+    {param base: $base /}
     {param mobile: true /}
   {/call}
 {/template}
@@ -30,7 +30,7 @@
           <ul class="dir-content">
         {/if}
         <li>
-          <a class="dir-next-level" href="{$base.url}{$key.url}">{$key.key|abbr:false}</a>
+          <a class="dir-next-level" href="{$base}{$key.url}">{$key.key|abbr:false}</a>
           {if $showNumLocs} ({$key.count}){/if}
         </li>
       {/foreach}
@@ -49,13 +49,13 @@
 {template .listHeader}
   <div class="dir-header">
     {if $showBack and length($crumbUrls) >= 2}
-      <a class="back-link" href="{$base.url}{$crumbUrls[length($crumbUrls)-2]}">
-        <img id="back-button" src="{$base.url}images/back_img_MOB.png"></img>
+      <a class="back-link" href="{$base}{$crumbUrls[length($crumbUrls)-2]}">
+        <img id="back-button" src="{$base}images/back_img_MOB.png"></img>
       </a>
     {/if}
     <span>
       {if $showNumLocs}
-        {$base.count} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
+        {1/*$base.count*/} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
       {else}
         All Locations
       {/if}
@@ -113,12 +113,12 @@
   {/if}
   <div class="dir-content-wrapper">
     {if $query}
-      <h3 class="search-query-result">{$base.count} Results for {if $queryLocation.geolocated}Current Location ({$queryLocation.city}, {$queryLocation.state}){else}"{$query}"{/if} </h3>
+      <h3 class="search-query-result">{1/*$base.count*/} Results for {if $queryLocation.geolocated}Current Location ({$queryLocation.city}, {$queryLocation.state}){else}"{$query}"{/if} </h3>
     {/if}
     <ul>
       {foreach $k in $keys}
         <li class="location location-{index($k)}">
-          <a href="{$base.url}{$k.url}">
+          <a href="{$base}{$k.url}">
             {let $l : $k.loc /}
             <div class="location-status">
               <div class="open-label" style="display:none">OPEN</div>
@@ -141,7 +141,7 @@
             </div>
             {if $l.hours and length($l.hours.days) > 0}
               <div class="hours">
-                <img src="{$base.url}images/hours_img.png" height="20px">
+                <img src="{$base}images/hours_img.png" height="20px">
                 <div class="hours-content">
                   {call helpers.hours data="$l.hours"}
                     {param format: 'table' /}
@@ -161,7 +161,7 @@
         {if $currentPage > 1}
           <span class="paginate previous js-paginate" data-paginate="-1">Previous</span>
         {/if}
-        {if $currentPage * $resultsPerPage < $base.count}
+        {if $currentPage * $resultsPerPage < 1/*$base.count*/}
           <span class="paginate next js-paginate" data-paginate="1">Next</span>
         {/if}
       </div>
@@ -181,8 +181,8 @@
     {rb});
   </script>
 {/if}
-<script src="{$base.url}js/lib/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="{$base.url}js/lib/jquery-jvectormap-us-aea-en.js"></script>
+<script src="{$base}js/lib/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="{$base}js/lib/jquery-jvectormap-us-aea-en.js"></script>
 {literal}
 <script type="text/javascript">
   $(document).ready(function() {
@@ -263,7 +263,7 @@ $(document).on('mapLoaded', function(e, m) {
       var pin = m.entities.get(0).get($list.index($(this)));
       pin.setOptions({visible:false});
       pin.setOptions({
-        icon: '{/literal}{$base.url}{literal}images/pushpin_large.png',
+        icon: '{/literal}{$base}{literal}images/pushpin_large.png',
         height: '55px',
         width: '39px',
         anchor: new Microsoft.Maps.Point(19.5, 55),
@@ -274,7 +274,7 @@ $(document).on('mapLoaded', function(e, m) {
       var pin = m.entities.get(0).get($list.index($(this)));
       pin.setOptions({visible:false});
       pin.setOptions({
-        icon: '{/literal}{$base.url}{literal}images/pushpin_small.png',
+        icon: '{/literal}{$base}{literal}images/pushpin_small.png',
         height: '37px',
         width: '26px',
         anchor: new Microsoft.Maps.Point(13, 37),
@@ -318,7 +318,7 @@ $(document).on('mapLoaded', function(e, m) {
         {let $l : $k.loc /}
         loc = new Microsoft.Maps.Location({$l.latitude}, {$l.longitude});
         pin = new Microsoft.Maps.Pushpin(loc, {lb}
-          icon: '{$base.url}images/pushpin_small.png',
+          icon: '{$base}images/pushpin_small.png',
           height: '37px',
           width: '26px',
           anchor: new Microsoft.Maps.Point(13, 37)
@@ -338,7 +338,7 @@ $(document).on('mapLoaded', function(e, m) {
                 scrollTop: $('.location-'+{index($k)}).offset().top - $('.location-0').offset().top{rb},
                 'slow');
             {else}
-              window.location.href = '{$base.url}{$k.url}';
+              window.location.href = '{$base}{$k.url}';
             {/if}
           {rb} else {lb}
             hideInfobox(e);
