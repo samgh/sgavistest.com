@@ -4,7 +4,6 @@
  * Template that displays all states in the directory in a list view with a map of the united states.
  * @param logo The business logo that is displayed in the header
  * @param base String the base url of current directory page
- * @param locationCount Integer of the number of locations on page
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
  *                               url (url of this directory level),
@@ -24,7 +23,6 @@
     <body>
       {call helpers.header data="all"}
         {param base: $base /}
-        {param locationCount: $locationCount /}
       {/call}
       <div class="dir-container">
         {call helpers.directory.listDirectory data="all" }
@@ -93,7 +91,6 @@
  * Template that displays all keys in the directory in a list view with a dynamic map.
  * @param logo The business logo that is displayed in the header
  * @param base String the base url of current directory page
- * @param locationCount Integer of the number of locations on page
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
  *                               url (url of this directory level),
@@ -113,7 +110,6 @@
     <body>
       {call helpers.header data="all"}
         {param base: $base /}
-        {param locationCount: $locationCount /}
       {/call}
       <div class="dir-container">
         {call helpers.directory.listDirectory data="all" }
@@ -134,7 +130,6 @@
  * Template that displays all locations in the directory in a list view with a dynamic map.
  * @param logo The business logo that is displayed in the header
  * @param base String the base url of current directory page
- * @param locationCount Integer of the number of locations on page
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
  *                               url (url of this directory level),
@@ -152,7 +147,6 @@
   <body>
       {call helpers.header data="all"}
         {param base: $base /}
-        {param locationCount: $locationCount /}
       {/call}
     <div class="dir-container">
       {call helpers.directory.locationList data="all"}
@@ -174,7 +168,6 @@
  * Generic template that displays items in a simple column list view.
  * @param logo The business logo that is displayed in the header
  * @param base String the base url of current directory page
- * @param locationCount Integer of the number of locations on page
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
  *                               url (url of this directory level),
@@ -192,7 +185,6 @@
     <body>
       {call helpers.header data="all"}
         {param base: $base /}
-        {param locationCount: $locationCount /}
       {/call}
       <div class="generic-wrapper">
         {call helpers.directory.genericList data="all" /}
