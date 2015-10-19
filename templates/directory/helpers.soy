@@ -41,6 +41,7 @@
 
 /**
  * @param base
+ * @param locationCount
  * @param crumbNames
  * @param crumbUrls
  * @param? showNumLocs show number of locations in the current directory if true
@@ -55,7 +56,7 @@
     {/if}
     <span>
       {if $showNumLocs}
-        {1} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
+        {locationCount} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
       {else}
         All Locations
       {/if}
@@ -97,6 +98,7 @@
 /**
  * @param keys
  * @param base
+ * @param locationCount
  * @param? crumbNames
  * @param? crumbUrls
  * @param? showNumLocs show number of locations in the current directory if true
@@ -113,7 +115,7 @@
   {/if}
   <div class="dir-content-wrapper">
     {if $query}
-      <h3 class="search-query-result">{1} Results for {if $queryLocation.geolocated}Current Location ({$queryLocation.city}, {$queryLocation.state}){else}"{$query}"{/if} </h3>
+      <h3 class="search-query-result">{locationCount} Results for {if $queryLocation.geolocated}Current Location ({$queryLocation.city}, {$queryLocation.state}){else}"{$query}"{/if} </h3>
     {/if}
     <ul>
       {foreach $k in $keys}
@@ -161,7 +163,7 @@
         {if $currentPage > 1}
           <span class="paginate previous js-paginate" data-paginate="-1">Previous</span>
         {/if}
-        {if $currentPage * $resultsPerPage < 1}
+        {if $currentPage * $resultsPerPage < locationCount}
           <span class="paginate next js-paginate" data-paginate="1">Next</span>
         {/if}
       </div>
