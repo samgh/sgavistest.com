@@ -2,11 +2,13 @@
 
 /**
  * @param base
+ * @param locationCount
  * @param logo
  */
 {template .mobileHeader}
   {call helpers.header data="all"}
     {param base: $base /}
+    {param locationCount: $locationCount /}
     {param mobile: true /}
   {/call}
 {/template}
