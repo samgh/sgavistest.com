@@ -55,7 +55,7 @@
     {/if}
     <span>
       {if $showNumLocs}
-        {2 /*locationCount */} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
+        {2 /* locationCount */} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}
       {else}
         All Locations
       {/if}
@@ -113,7 +113,7 @@
   {/if}
   <div class="dir-content-wrapper">
     {if $query}
-      <h3 class="search-query-result">{2 /*locationCount*/} Results for {if $queryLocation.geolocated}Current Location ({$queryLocation.city}, {$queryLocation.state}){else}"{$query}"{/if} </h3>
+      <h3 class="search-query-result">{2 /* locationCount */} Results for {if $queryLocation.geolocated}Current Location ({$queryLocation.city}, {$queryLocation.state}){else}"{$query}"{/if} </h3>
     {/if}
     <ul>
       {foreach $k in $keys}
