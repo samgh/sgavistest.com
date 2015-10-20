@@ -60,7 +60,7 @@
       {if $showNumLocs}
         {let $numLocs: 0 /}
         {foreach $key in $keys}
-          {let $numLocs: $numLocs + $key.count /}
+          {$numLocs: $numLocs + $key.count /}
         {/foreach}
         {$numLocs} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}  /* 2 = locationCount */
       {else}
