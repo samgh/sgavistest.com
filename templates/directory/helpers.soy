@@ -59,7 +59,7 @@
     {/if}
     <span>
       {if $showNumLocs}
-        {$numLocs = 0}
+        {let $numLocs:0}
         {foreach $key in $keys}
           {$numLocs = $numLocs + $key.count}
         {/foreach}
