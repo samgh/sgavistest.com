@@ -2,7 +2,7 @@
 
 /**
  * Template that displays all keys in the directory in a list view
- * @param base String the base url of current directory page
+ * @param baseUrl String the base url of current directory page
  * @param numLocs Number of locations in current directory
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
@@ -19,7 +19,7 @@
       <meta name="viewport" content="width=device-width, user-scalable=no">
       <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/directory/default.css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/directory/default.css">
     </head>
     <body>
       {call helpers.directory.mobileHeader data="all"}
@@ -37,7 +37,7 @@
 
 /**
  * Template that displays all keys in the directory in a list view
- * @param base String the base url of current directory page
+ * @param baseUrl String the base url of current directory page
  * @param numLocs Number of locations in current directory
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
@@ -54,7 +54,7 @@
       <meta name="viewport" content="width=device-width, user-scalable=no">
       <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/directory/default.css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/directory/default.css">
     </head>
     <body>
       {call helpers.directory.mobileHeader data="all"}
@@ -72,7 +72,7 @@
 
 /**
  * Template that displays all locations in the directory in a list view
- * @param base String the base url of current directory page
+ * @param baseUrl String the base url of current directory page
  * @param numLocs Number of locations in current directory
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
@@ -89,7 +89,7 @@
       <meta name="viewport" content="width=device-width, user-scalable=no">
       <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/directory/default.css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/directory/default.css">
     </head>
     <body>
       {call helpers.directory.mobileHeader data="all"}
@@ -107,7 +107,7 @@
 
 /**
  * Template that displays all keys in the directory in a list view
- * @param base String the base url of current directory page
+ * @param baseUrl String the base url of current directory page
  * @param keys List of Objects: {key (name of this next directory level),
  *                               loc (location information of a location in this directory),
  *                               url (url of this directory level),
@@ -123,7 +123,7 @@
       <meta name="viewport" content="width=device-width, user-scalable=no">
       <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/directory/default.css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/directory/default.css">
     </head>
     <body>
       {call helpers.directory.mobileHeader data="all"}
@@ -131,8 +131,8 @@
       {/call}
       <div class="dir-header">
         {if length($crumbUrls) >= 2}
-          <a class="back-link" href="{$base}{$crumbUrls[length($crumbUrls)-2]}">
-            <img id="back-button" src="{$base}images/back_img_MOB.png"></img>
+          <a class="back-link" href="{$baseUrl}{$crumbUrls[length($crumbUrls)-2]}">
+            <img id="back-button" src="{$baseUrl}images/back_img_MOB.png"></img>
           </a>
         {/if}
         <span>
@@ -147,7 +147,7 @@
               <ul class="dir-content">
             {/if}
             <li>
-              <a class="dir-next-level" href="{$base}{$key.url}">{$key.key}</a>
+              <a class="dir-next-level" href="{$baseUrl}{$key.url}">{$key.key}</a>
             </li>
           {/foreach}
         </ul>
