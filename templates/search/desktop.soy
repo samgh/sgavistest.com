@@ -3,6 +3,7 @@
 /**
  * @param logo
  * @param base
+ * @param numLocs
  * @param locations
  * @param currentPage
  * @param resultsPerPage
@@ -16,16 +17,16 @@
       {call helpers.commonHeadTags data="all"/}
       <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base.url}css/search/default.css">
+      <link rel="stylesheet" type="text/css" href="{$base}css/search/default.css">
     </head>
     <body>
       {call helpers.header data="all"}
-        {param base: $base.url /}
+        {param base: $base /}
         {param locale: $locale /}
         {param isPrimaryLocale: $isPrimaryLocale /}
       {/call}
       <div class="dir-container">
-        {if $base.count == 0}
+        {if $numLocs == 0}
           <h1>No Results Found</h1>
         {else}
           {call helpers.directory.locationList data="all"}
