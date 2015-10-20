@@ -2,8 +2,8 @@
 
 /**
  * @param logo
- * @param base
- * @param numLocs 
+ * @param baseUrl
+ * @param numLocs
  * @param locations
  */
 {template .default}
@@ -14,11 +14,11 @@
       <meta name="viewport" content="width=device-width, user-scalable=no">
       <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/search/default.css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/search/default.css">
     </head>
     <body>
       {call helpers.header data="all"}
-        {param base: $base /}
+        {param baseUrl: $baseUrl /}
       {/call}
       {if $numLocs == 0}
         <h1>No Results Found</h1>
