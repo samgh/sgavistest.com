@@ -14,7 +14,6 @@
 /**
  * @param keys
  * @param base
- * @param numLocs
  * @param crumbNames
  * @param crumbUrls
  * @param? showNumLocs show number of locations in the current directory if true
@@ -44,6 +43,7 @@
 {/template}
 
 /**
+ * @param keys
  * @param base
  * @param crumbNames
  * @param crumbUrls
@@ -59,7 +59,11 @@
     {/if}
     <span>
       {if $showNumLocs}
-        {2} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}  /* 2 = locationCount */
+        {$numLocs = 0}
+        {foreach $key in $keys}
+          {$numLocs = $numLocs + $key.count}
+        {/foreach}
+        {$numLocs} Locations in {$crumbNames[length($crumbNames)-1]|abbr:false}  /* 2 = locationCount */
       {else}
         All Locations
       {/if}
