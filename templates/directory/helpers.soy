@@ -21,12 +21,9 @@
  * @param? showBack show back button that directs to the previous level if true
  */
 {template .listDirectory}
-<div id="keys">{$keys}</div>
+<div id="keys">{$keys[0]}</div>
 <div id="base">{$base}</div>
 <div id="numLocs">{$numLocs}</div>
-<div id="crumbnames">{$crumbNames}</div>
-<div id="crumburls">{$crumbUrls}</div>
-<div id="shownumlocs">{$showNumLocs}</div>
 <div class="dir-list">
   {call .listHeader data="all" /}
   <div class="dir-content-wrapper">
