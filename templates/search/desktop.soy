@@ -2,7 +2,7 @@
 
 /**
  * @param logo
- * @param base
+ * @param baseUrl
  * @param numLocs
  * @param locations
  * @param currentPage
@@ -17,11 +17,11 @@
       {call helpers.commonHeadTags data="all"/}
       <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="//yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/search/default.css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/search/default.css">
     </head>
     <body>
       {call helpers.header data="all"}
-        {param base: $base /}
+        {param baseUrl: $baseUrl /}
         {param locale: $locale /}
         {param isPrimaryLocale: $isPrimaryLocale /}
       {/call}
