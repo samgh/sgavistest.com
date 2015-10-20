@@ -27,6 +27,7 @@
       {/call}
       <div class="dir-container">
         {call helpers.directory.listDirectory data="all" }
+          {param numLocs: $numLocs /}
           {param showNumLocs: false /}
         {/call}
         <div id="us-map"></div>
