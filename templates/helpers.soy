@@ -47,7 +47,7 @@
 /**
  * Header for all pages.
  * @param logo
- * @param? base
+ * @param? baseUrl
  * @param? crumbNames
  * @param? crumbUrls
  * @param? currentPage
@@ -63,12 +63,12 @@
         <div class="inner-wrapper">
           Supported Languages:
           {foreach $key in sortList(keys($versions))}
-            <a href="{$base}/{$versions[$key]}">{llocaleName($key, $key)}</a>
+            <a href="{$baseUrl}/{$versions[$key]}">{llocaleName($key, $key)}</a>
           {/foreach}
         </div>
       </div>
     {/if}
-    <form id="search" action={if $locale and not $isPrimaryLocale}"{$base}/{$locale}/search.html"{else}"{$base}/search.html"{/if}>
+    <form id="search" action={if $locale and not $isPrimaryLocale}"{$baseUrl}/{$locale}/search.html"{else}"{$baseUrl}/search.html"{/if}>
       <input id="search-query" type="search" data-platform={if $mobile}"mobile"{else}"desktop"{/if} name="q">
       {if $currentPage}
         <input id="search-page" type="hidden" name="p" value="{$currentPage}">
@@ -78,7 +78,7 @@
       {if $logo}
         <img src="{$logo}">
       {else}
-        <img src="{$base}images/bank-on-us-logo.png">
+        <img src="{$baseUrl}images/bank-on-us-logo.png">
       {/if}
     </div>
     {if $crumbNames and not $mobile}
@@ -117,14 +117,14 @@
 {/template}
 
 /**
- * @param base
+ * @param baseUrl
  * @param crumbNames
  * @param crumbUrls
  */
 {template .breadcrumb}
   {foreach $name in $crumbNames}
    {if not isFirst($name)} <span class="breadcrumb-separator">&#x232a;</span> {/if}
-    <a { if isLast($name) }class="selected" {/if}href="{$base}{$crumbUrls[index($name)]}">{isFirst($name) ? 'Locations' : $name  }</a>
+    <a { if isLast($name) }class="selected" {/if}href="{$baseUrl}{$crumbUrls[index($name)]}">{isFirst($name) ? 'Locations' : $name  }</a>
   {/foreach}
 {/template}
 
