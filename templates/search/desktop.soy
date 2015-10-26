@@ -30,6 +30,7 @@
           <h1>No Results Found</h1>
         {else}
           {call helpers.directory.locationList data="all"}
+            {param locationCount: $resultCount /}
             {param keys: $locations /}
             {param showNumLocs: false /}
           {/call}
