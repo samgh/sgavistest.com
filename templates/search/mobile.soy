@@ -25,6 +25,7 @@
       {else}
         <div class="dir-container">
           {call helpers.directory.locationList data="all"}
+            {param locationCount: $resultCount /}
             {param keys: $locations /}
             {param showNumLocs: false /}
           {/call}
