@@ -214,7 +214,7 @@
  * Create nearby locations section.
  *
  * @param nearbyLocations
- * @param base
+ * @param baseUrl
  */
 {template .nearby}
   {if $nearbyLocations and length($nearbyLocations) > 0}
@@ -227,7 +227,7 @@
           {for $i in range(0, length($nearbyLocations), 2)}
             <li class="nearby-location-wrap">
             {let $loc: $nearbyLocations[$i] /}
-              <a href="{$base}{$loc.url}">
+              <a href="{$baseUrl}{$loc.url}">
                 <h3>{$loc.name}</h3>
                 <div class="nearby-location-details">
                   Distance: {$loc.distance} miles <br>
@@ -238,7 +238,7 @@
               </a>
               {if $i + 1 < length($nearbyLocations)}
                 {let $loc: $nearbyLocations[$i+1] /}
-                <a href="{$base}{$loc.url}">
+                <a href="{$baseUrl}{$loc.url}">
                   <h3>{$loc.name}</h3>
                   <div class="nearby-location-details">
                     Distance: {$loc.distance} miles <br>
