@@ -3,7 +3,7 @@
 /**
  * @param logo
  * @param baseUrl
- * @param numLocs
+ * @param resultCount
  * @param locations
  */
 {template .default}
@@ -20,7 +20,7 @@
       {call helpers.header data="all"}
         {param baseUrl: $baseUrl /}
       {/call}
-      {if $numLocs == 0}
+      {if $resultCount == 0}
         <h1>No Results Found</h1>
       {else}
         <div class="dir-container">
