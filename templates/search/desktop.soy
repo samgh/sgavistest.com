@@ -3,7 +3,7 @@
 /**
  * @param logo
  * @param baseUrl
- * @param numLocs
+ * @param resultCount
  * @param locations
  * @param currentPage
  * @param resultsPerPage
@@ -26,7 +26,7 @@
         {param isPrimaryLocale: $isPrimaryLocale /}
       {/call}
       <div class="dir-container">
-        {if $numLocs == 0}
+        {if $resultCount == 0}
           <h1>No Results Found</h1>
         {else}
           {call helpers.directory.locationList data="all"}
