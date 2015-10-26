@@ -4,7 +4,7 @@
  * Template used to generate our locations HTML map
  *
  * @param logo The business logo that is displayed in the header
- * @param base the base url of current directory page
+ * @param baseUrl the base url of current directory page
  * @param siteTree
  */
 {template .default}
@@ -12,8 +12,8 @@
   <html>
     <head>
       {call helpers.commonHeadTags data="all"/}
-      <link rel="stylesheet" href="{$base}css/lib/reset.css" type="text/css">
-      <link rel="stylesheet" type="text/css" href="{$base}css/directory/default.css">
+      <link rel="stylesheet" href="{$baseUrl}css/lib/reset.css" type="text/css">
+      <link rel="stylesheet" type="text/css" href="{$baseUrl}css/directory/default.css">
     </head>
     <body>
       {call helpers.header data="all" /}
