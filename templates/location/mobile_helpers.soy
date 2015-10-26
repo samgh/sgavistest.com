@@ -166,7 +166,7 @@
 
 /**
  * @param nearbyLocations
- * @param base
+ * @param baseUrl
  */
 {template .nearby}
    <article id="nearby" class="collapsible">
@@ -175,7 +175,7 @@
       <ul>
         {foreach $l in $nearbyLocations}
           <li>
-            <a href="{$base}{$l.url}">
+            <a href="{$baseUrl}{$l.url}">
               <div class="distance">
                 {$l.distance} miles
               </div>
@@ -196,7 +196,7 @@
               </div>
               {if $l.hours and length($l.hours.days) > 0}
                 <div class="hours">
-                  <img src="{$base}images/hours_img.png">
+                  <img src="{$baseUrl}images/hours_img.png">
                   <div class="hours-content">
                     {call helpers.hours data="$l.hours"}
                       {param format: 'table' /}
