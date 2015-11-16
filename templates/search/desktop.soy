@@ -2,7 +2,7 @@
 
 /**
  * @param logo
- * @param baseUrl
+ * @param baseUrls
  * @param resultCount
  * @param locations
  * @param currentPage
@@ -21,7 +21,7 @@
     </head>
     <body>
       {call helpers.header data="all"}
-        {param baseUrl: $baseUrla /}
+        {param baseUrl: $baseUrls /}
         {param locale: $locale /}
         {param isPrimaryLocale: $isPrimaryLocale /}
       {/call}
