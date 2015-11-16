@@ -8,7 +8,7 @@
  * @param currentPage
  * @param resultsPerPage
  * @param locale
- * @param isPrimaryLocale
+ * @param isPrimaryLocales
  */
 {template .default}
   <!DOCTYPE html>
@@ -23,7 +23,7 @@
       {call helpers.header data="all"}
         {param baseUrl: $baseUrl /}
         {param locale: $locale /}
-        {param isPrimaryLocale: $isPrimaryLocale /}
+        {param isPrimaryLocale: $isPrimaryLocales /}
       {/call}
       <div class="dir-container">
         {if $resultCount == 0}
