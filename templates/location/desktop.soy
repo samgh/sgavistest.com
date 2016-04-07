@@ -30,6 +30,7 @@
  * @param bios
  * @param nearbyLocations
  * @param? listings
+ * @param custom
  */
 {template .default}
 <!doctype html>
@@ -42,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href="{$baseUrl}css/location/default.css">
   </head>
   <body>
+  {custom}
     {call helpers.header data="all" /}
     <div class="wide-wrapper">
       <div id="cover-photo" {if length($gallery) > 0}style="background:url({$gallery[0].sizes[0].url}) no-repeat; background-size: cover;"{/if}>
