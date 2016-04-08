@@ -123,6 +123,7 @@
         <li class="location location-{index($k)}">
           <a href="{$baseUrl}{$k.url}">
             {let $l : $k.loc /}
+            {$l.custom}
             <div class="location-status">
               <div class="open-label" style="display:none">OPEN</div>
               <div class="closed-label" style="display:none">CLOSED</div>
